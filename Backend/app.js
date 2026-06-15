@@ -23,7 +23,11 @@ app.get("/health", (req, res) => {
     status: "UP",
   });
 });
-
+app.get("/version", (req, res) => {
+  res.status(200).json({
+    message : "v1.1.1",
+  });
+});
 
 
 // Db Connection and server up 
