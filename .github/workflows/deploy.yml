@@ -26,14 +26,3 @@ jobs:
       - name: Push Docker Image
         run: |
           docker push spandan735/blog-app:latest
-
-      
-      - name: Update Deployment Image
-        run: |
-          kubectl set image deployment/blog-api \
-          blog-api=spandan735/blog-app:${{ github.sha }} \
-          -n blog-app
-
-      - name: Verify Rollout
-        run: |
-          kubectl rollout status deployment/blog-api -n blog-app
