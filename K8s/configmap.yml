@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: blog-api-config
+  namespace: blog-app
+
+data:
+  PORT: "8000"
+  MONGODB_URL: "mongodb://mongodb-service:27017/blog"
